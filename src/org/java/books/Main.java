@@ -42,7 +42,7 @@ public class Main {
 				
 				libri[i] = new Libro(titolo, nPagine, autore, editore);
 //				System.out.println(libri[i]);
-//				System.out.println("-----------------------");
+//				System.out.println("\n-----------------------\n");
 				
 			}catch (Exception e) {
 				
@@ -61,10 +61,10 @@ public class Main {
 			
 				for (int x=0;x<libri.length;x++) {
 					
-					myWriter.write(libri[x].toString() + "/n");
+					myWriter.write(libri[x].toString() + "\n");
 					
 //					System.out.println(libri[x]);
-//					System.out.println("----------------");
+//					System.out.println("\n----------------\n");
 					
 				}
 			} catch (IOException e) {
@@ -94,7 +94,7 @@ public class Main {
 					while (reader.hasNextLine()) {
 						
 						String line = reader.nextLine();
-						System.out.println(line + "/n");
+						System.out.println(line + "\n");
 					}
 				} catch (Exception e) { 
 				
