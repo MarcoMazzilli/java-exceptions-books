@@ -10,19 +10,22 @@ public class Libro {
 	
 	
 	
-	public Libro(String titolo, int numeroDiPagine, String autore, String editore) {
+	public Libro(String titolo, int numeroDiPagine, String autore, String editore) throws Exception {
 		
-		this.titolo = titolo;
-		this.numeroDiPagine = numeroDiPagine;
-		this.autore = autore;
-		this.editore = editore;
+		setTitolo(titolo);
+		setNumeroDiPagine(numeroDiPagine);
+		setAutore(autore);
+		setEditore(editore);
 		
 	}
 	
 	public String getTitolo() {
 		return titolo;
 	}
-	public void setTitolo(String titolo) {
+	public void setTitolo(String titolo) throws Exception {
+		if(titolo.isBlank()) {
+			throw new Exception("Il titolo non puo essere una stringa vuota");
+		}
 		this.titolo = titolo;
 	}
 	
@@ -30,7 +33,10 @@ public class Libro {
 	public int getNumeroDiPagine() {
 		return numeroDiPagine;
 	}
-	public void setNumeroDiPagine(int numeroDiPagine) {
+	public void setNumeroDiPagine(int numeroDiPagine) throws Exception {
+		if(numeroDiPagine < 1) {
+			throw new Exception("Il libro deve avere almeno una pagina");
+		}
 		this.numeroDiPagine = numeroDiPagine;
 	}
 	
@@ -38,7 +44,10 @@ public class Libro {
 	public String getAutore() {
 		return autore;
 	}
-	public void setAutore(String autore) {
+	public void setAutore(String autore) throws Exception {
+		if(autore.isBlank()) {
+			throw new Exception("l'autore non puo essere una stringa vuota");
+		}
 		this.autore = autore;
 	}
 	
@@ -46,7 +55,10 @@ public class Libro {
 	public String getEditore() {
 		return editore;
 	}
-	public void setEditore(String editore) {
+	public void setEditore(String editore) throws Exception {
+		if(editore.isBlank()) {
+			throw new Exception("L'editore non puo essere una stringa vuota");
+		}
 		this.editore = editore;
 	}
 	
