@@ -1,5 +1,6 @@
 package org.java.books;
 
+import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
@@ -60,7 +61,7 @@ public class Main {
 			
 				for (int x=0;x<libri.length;x++) {
 					
-					myWriter.write(libri[x].toString());
+					myWriter.write(libri[x].toString() + "/n");
 					
 //					System.out.println(libri[x]);
 //					System.out.println("----------------");
@@ -78,6 +79,31 @@ public class Main {
 					e.getMessage();
 				}
 			}
+		
+		//READING FILE
+		
+		// lettura di tutto il file
+		
+				File fileToRead = new File("/Users/marcovittorio/Desktop/JAVA/Exercises/java.out");
+				Scanner reader = null;
+				
+				try {
+					
+					reader = new Scanner(fileToRead);
+					
+					while (reader.hasNextLine()) {
+						
+						String line = reader.nextLine();
+						System.out.println(line + "/n");
+					}
+				} catch (Exception e) { 
+				
+					System.out.println("Errore durante la lettura del file" + e.getMessage());
+				} finally {
+					
+					if (reader != null)
+						reader.close();
+				}
 	
 	}
 	
